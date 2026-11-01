@@ -2,11 +2,11 @@
 
 Give your agent a boundary it can actually test.
 
-Watch the [71-second film](https://michaeljabbour.github.io/amplifier-skill-constraint-builder/#film): a guard that blocks everything, and the test cases that let honest work through while counting every escape. The example in it is fictional.
+Watch the [71-second film](https://michaeljabbour.github.io/amplifier-capability-constraint-builder/#film): a guard that blocks everything, and the test cases that let honest work through while counting every escape. The example in it is fictional.
 
 For developers building agent tools. Turn “the agent may do this, but never that” into an action specification, a checker and examples that show whether useful work is still possible.
 
-[Explore the site](https://michaeljabbour.github.io/amplifier-skill-constraint-builder/)
+[Explore the site](https://michaeljabbour.github.io/amplifier-capability-constraint-builder/)
 
 ## What you get
 
@@ -17,8 +17,8 @@ For developers building agent tools. Turn “the agent may do this, but never th
 ## Start here
 
 ```sh
-git clone https://github.com/michaeljabbour/amplifier-skill-constraint-builder.git
-cd amplifier-skill-constraint-builder
+git clone https://github.com/michaeljabbour/amplifier-capability-constraint-builder.git
+cd amplifier-capability-constraint-builder
 python3 scripts/capability.py install --dest ~/.agents/skills
 ```
 
@@ -211,7 +211,7 @@ These requirements apply to the retained Amplifier bundle, not the portable skil
 After configuring Amplifier and its provider, register the canonical public source for discovery:
 
 ```bash
-amplifier bundle add git+https://github.com/michaeljabbour/amplifier-skill-constraint-builder@main
+amplifier bundle add git+https://github.com/michaeljabbour/amplifier-capability-constraint-builder@main
 ```
 
 Registration does not activate the bundle or run a refinement job. Inspect the installed CLI with `amplifier bundle --help` before choosing that optional execution path.
