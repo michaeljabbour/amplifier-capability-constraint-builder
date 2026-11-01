@@ -14,3 +14,7 @@ Build: write an explicit action spec and expected legal/illegal examples before 
 Debug: read references/convergence-debugging.md for plateau diagnosis and bounded refinement. Keep generator, critic and evaluator roles separate when measuring improvements. Freeze held-out cases before refinement. Stop when the agreed test/reward bar is met or the budget is exhausted; report a plateau plainly.
 
 The original Pico/Nano/Micro runtimes, hook and factory recipes remain optional repository engines. Use the smallest engine that supplies the actual enforcement boundary. Existing Amplifier modes are adapters to this method.
+
+## Optional coaching checkpoint
+
+Read [the local coaching guide](references/coaching-session.v1.md) only when the person asks for practice or optional session bookkeeping. Keep direct artifact production available; agree a small budget, preserve the baseline and stop on goal, user exit or no meaningful gain.
