@@ -231,3 +231,10 @@ This repository was renamed from `amplifier-skill-constraint-builder` to `amplif
 ## Optional coaching
 
 For an explicitly requested practice or review checkpoint, use [the local coaching guide](skills/constraint-builder/references/coaching-session.v1.md). It includes a fictional first task, a baseline, a bounded budget, stop rules and human-reviewed keep/revert. No learner trace is saved by default, and software checks do not establish human learning or outside-user usefulness.
+
+## Local evaluation controls
+
+For local benchmark preparation, see [the mixed-gold controls](docs/BENCHMARK.md):
+both constant-allow and constant-deny must fail the same legal/illegal fixture,
+and an empty case set is not success. These are exposed software controls,
+not an unseen security, task-completion or comparative-outcome result.

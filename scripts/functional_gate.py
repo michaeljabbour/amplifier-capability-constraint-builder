@@ -23,6 +23,26 @@ S=ROOT/'skills/constraint-builder/scripts'
 sys.path.insert(0,str(S))
 from check_actions import evaluate
 class Gate(unittest.TestCase):
+    def test_deny_all_and_allow_all_fail_the_same_mixed_gold(self):
+        cases=[{'tool_name':'read','parameters':{'path':'fixture.txt'},'expected':True},
+               {'tool_name':'write','parameters':{'path':'fixture.txt'},'expected':False}]
+        with tempfile.TemporaryDirectory() as d:
+            for allow,metric in [(False,'false_rejections'),(True,'illegal_escapes')]:
+                p=Path(d)/('allow.py' if allow else 'deny.py')
+                p.write_text(f'def validate_action(state, action):\n return {allow!r}, "fictional constant control"\n')
+                result=evaluate(p,cases,d)
+                self.assertEqual(result['status'],'fail-or-no-cases')
+                self.assertEqual(result[metric],1)
+                self.assertEqual(result['legal_cases'],1)
+                self.assertEqual(result['illegal_cases'],1)
+
+    def test_empty_supplied_cases_are_not_success(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'candidate.py';p.write_text('def validate_action(state, action):\n return True, "control"\n')
+            result=evaluate(p,[],d)
+            self.assertEqual(result['status'],'fail-or-no-cases')
+            self.assertEqual(result['cases'],[])
+
     def test_boundary_rejects_escape_and_preserves_legal_read(self):
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/'candidate.py'

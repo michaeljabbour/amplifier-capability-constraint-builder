@@ -77,7 +77,8 @@
   ],
   "docs": [
     "docs/CONSOLIDATION.md",
-    "docs/RUNTIME-BOUNDARIES.md"
+    "docs/RUNTIME-BOUNDARIES.md",
+    "docs/BENCHMARK.md"
   ],
   "publication_status": "Installation and evidence scopes are documented below.",
   "marketing": {
